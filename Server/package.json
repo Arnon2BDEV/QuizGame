@@ -1,0 +1,20 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "Server.js",
+  "dependencies": {
+    "generate-password": "^1.4.2",
+    "mongoose": "^5.6.9",
+    "randomatic": "^3.1.1",
+    "shortid": "^2.2.14",
+    "socket.io": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon serv.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
