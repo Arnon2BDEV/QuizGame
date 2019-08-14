@@ -823,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 446631353, guid: 11856203073607e408aa9e2a8e414212, type: 3}
       propertyPath: url
-      value: ws://192.168.1.103:3000/socket.io/?EIO=4&transport=websocket
+      value: ws://localhost:3000/socket.io/?EIO=4&transport=websocket
       objectReference: {fileID: 0}
     - target: {fileID: 758070321, guid: 11856203073607e408aa9e2a8e414212, type: 3}
       propertyPath: m_LocalPosition.x

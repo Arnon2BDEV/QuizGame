@@ -20,10 +20,21 @@ public class RoomController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        numberTxt.text = room.playerinroom + " / 5";
         if (room.playerinroom == Maxplayer)
         {
             numberTxt.text = "Full";
+            if (room.status == true)
+            {
+                numberTxt.text = "Playing...";
+            }
+        }
+        else if (room.status == true)
+        {
+            numberTxt.text = "Playing...";
+        }
+        else
+        {
+            numberTxt.text = room.playerinroom + " / 5";
         }
     }
 }

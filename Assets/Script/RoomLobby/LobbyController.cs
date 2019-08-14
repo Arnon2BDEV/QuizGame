@@ -17,12 +17,14 @@ public class LobbyController : MonoBehaviour
     public PlayerCon playerCon;
     public RoomController roomController;
     private RoomController room;
+    public RoomfulMsg roomfulMsg;
 
     public List<RoomController> roomList;
     public Button btn_createroom;
     public Button btn_close;
     public Text Msg;
     public InputField CreateRoomIn;
+
     private string password;
 
     void Start ()
@@ -32,8 +34,8 @@ public class LobbyController : MonoBehaviour
         socket.On("ADD_ROOM",addroom);
         socket.On("UPDATE",updateroom);
         socket.On("INROOM",inroom);
-        socket.On("FULL",msg);
         socket.On("DROOM",deleteroom);
+        socket.On("ErrorRoom",Errorroomname);
         btn_createroom.onClick.AddListener(() => onClick_CreateRoom());
         btn_close.onClick.AddListener(() => onClick_Close());
     }
@@ -60,13 +62,16 @@ public class LobbyController : MonoBehaviour
             Button roomclick = room.GetComponent<Button>();
             roomclick.onClick.AddListener(() =>
             {
-                var i = 0;
-                if (i == 0)
+                if (room.room.playerinroom == 5)
                 {
-                    Debug.Log(room.room.id + " is click " + i);
+                    roomfulMsg.Setup(room.room);
+                    roomfulMsg.gameObject.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log(room.room.id + " is click ");
                     Onclick_join(room.room);
                 }
-                else return;
             });
             roomList.Add(room);
         }
@@ -87,8 +92,15 @@ public class LobbyController : MonoBehaviour
             Button roomclick = room.GetComponent<Button>();
             roomclick.onClick.AddListener(() =>
             {
-                Debug.Log(room.room.id + " is click ");
-                Onclick_join(room.room);
+               if (room.room.playerinroom == 5)
+                {
+                    roomfulMsg.gameObject.SetActive(true);
+                }
+                else
+                {
+                    Debug.Log(room.room.id + " is click ");
+                    Onclick_join(room.room);
+                }
             });
             roomList.Add(room);
         }
@@ -160,8 +172,8 @@ public class LobbyController : MonoBehaviour
         else
         {
             Msg.text = "Cannot use this name";
-            Msg.enabled = true;
-            StartCoroutine("Textdisable");
+            Msg.gameObject.SetActive(true);
+            StartCoroutine("Textdis");
         }
     }
 
@@ -185,7 +197,7 @@ public class LobbyController : MonoBehaviour
             join.gameObject.SetActive(true);
             join.Roomname.text = room.roomname;
             join.JoinBtn.onClick.AddListener(() => {
-                string password = GameObject.Find("JoinIn").GetComponent<InputField>().text;
+                string password = join.JoinIn.GetComponent<InputField>().text;
                 if (password == room.roompin)
                 {
                     Dictionary<string, string> data = new Dictionary<string, string>();
@@ -207,6 +219,18 @@ public class LobbyController : MonoBehaviour
             });
         }
 
+    }
+
+    public void Errorroomname(SocketIOEvent obj)
+    {
+        Msg.text = "This roomname has used";
+        Msg.gameObject.SetActive(true);
+        StartCoroutine("Textdis");
+    }
+    public IEnumerator Textdis()
+    {
+        yield return new WaitForSeconds(1f);
+        Msg.gameObject.SetActive(false);
     }
 
     public IEnumerator Textdisable()
