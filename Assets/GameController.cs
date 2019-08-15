@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SocketIO;
 using UnityEngine.SceneManagement;
+using System;
 
 public class GameController : MonoBehaviour
 {
@@ -24,7 +25,6 @@ public class GameController : MonoBehaviour
     public Text qnumbertxt;
     public Text correctTxt;
     public Text wrongTxt;
-    public int i;
 
     public List<GameObject> choicesList = new List<GameObject>();
     public SimpleObjectPool answerButtonObjectPool;
@@ -51,18 +51,16 @@ public class GameController : MonoBehaviour
 
     public void setgame(SocketIOEvent obj)
     {
-            i++;
-            Debug.Log(i);
             correctTxt.gameObject.SetActive(false);
             wrongTxt.gameObject.SetActive(false);
             Debug.Log("Game Set" + obj.data);
             QuestionModel question = JsonUtility.FromJson<QuestionModel>(obj.data.ToString());
             Debug.Log(question.question);
-            qnumbertxt.text = "Question " + i;
+            qnumbertxt.text = "Question " + question.id;
             questiontxt.text = question.question;
-            Debug.Log(question.answer);
             List<QuestionModel.Choices> choices = new List<QuestionModel.Choices>();
             choices = question.choices;
+            choices = ShuffleList(choices);
             RemoveChoicesButton();
 
             foreach (var item in choices)
@@ -138,5 +136,21 @@ public class GameController : MonoBehaviour
     public float CalculateSliderValue()
     {
         return (timeLeft / maxTime);
+    }
+
+    private List<E> ShuffleList<E>(List<E> inputList)
+    {
+        List<E> randomList = new List<E>();
+
+        System.Random r = new System.Random();
+        int randomIndex = 0;
+        while (inputList.Count > 0)
+        {
+            randomIndex = r.Next(0, inputList.Count); //Choose a random object in the list
+            randomList.Add(inputList[randomIndex]); //add it to the new, random list
+            inputList.RemoveAt(randomIndex); //remove to avoid duplicates
+        }
+
+        return randomList; //return the new random list
     }
 }
