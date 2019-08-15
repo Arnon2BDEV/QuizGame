@@ -60,23 +60,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Blue Cartoon UI\Demo_Assets\scripts\GUI_Demo.cs" />
     <Compile Include="Assets\ChoicesController.cs" />
     <Compile Include="Assets\GameController.cs" />
     <Compile Include="Assets\Player.cs" />
     <Compile Include="Assets\PlayerCon.cs" />
     <Compile Include="Assets\PlayerLobbyController.cs" />
+    <Compile Include="Assets\Prefabs\Script\DataController.cs" />
+    <Compile Include="Assets\Prefabs\Script\DontDestroy.cs" />
+    <Compile Include="Assets\Prefabs\Script\Open\OpenController.cs" />
+    <Compile Include="Assets\Prefabs\Script\RoomLobby\JoinController.cs" />
+    <Compile Include="Assets\Prefabs\Script\RoomLobby\JsonHelper.cs" />
+    <Compile Include="Assets\Prefabs\Script\RoomLobby\LobbyController.cs" />
+    <Compile Include="Assets\Prefabs\Script\RoomLobby\Room.cs" />
     <Compile Include="Assets\QuestionModel.cs" />
     <Compile Include="Assets\ResultCon.cs" />
     <Compile Include="Assets\ResultController.cs" />
     <Compile Include="Assets\RoomController.cs" />
     <Compile Include="Assets\RoomfulMsg.cs" />
-    <Compile Include="Assets\Script\DataController.cs" />
-    <Compile Include="Assets\Script\DontDestroy.cs" />
-    <Compile Include="Assets\Script\Open\OpenController.cs" />
-    <Compile Include="Assets\Script\RoomLobby\JoinController.cs" />
-    <Compile Include="Assets\Script\RoomLobby\JsonHelper.cs" />
-    <Compile Include="Assets\Script\RoomLobby\LobbyController.cs" />
-    <Compile Include="Assets\Script\RoomLobby\Room.cs" />
     <Compile Include="Assets\SimpleObjectPool.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONTemplates.cs" />

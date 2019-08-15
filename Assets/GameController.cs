@@ -17,8 +17,6 @@ public class GameController : MonoBehaviour
     private float maxTime = 5f;
     private float timeLeft;
 
-    public Text Scoretxt;
-
     public Transform choicesPanel;
 
     public Text questiontxt;
