@@ -483,6 +483,62 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!1 &155998621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 155998623}
+  - component: {fileID: 155998622}
+  m_Layer: 0
+  m_Name: RoomLobbyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &155998622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155998621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab28048cb2503d74ea43013478eb9187, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socket: {fileID: 12032057}
+  content: {fileID: 113064978}
+  join: {fileID: 443396867}
+  playerCon: {fileID: 2494702830885218884, guid: e839f14281f3198489f12b422fab6f52,
+    type: 3}
+  roomController: {fileID: 3369499835482918918, guid: cd898d934e2499140a1e75a9449f20d7,
+    type: 3}
+  roomfulMsg: {fileID: 1561797818}
+  roomList: []
+  btn_createroom: {fileID: 1368969335}
+  btn_close: {fileID: 1991545842}
+  Msg: {fileID: 1610530447}
+  CreateRoomIn: {fileID: 24731577}
+--- !u!4 &155998623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155998621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.041096, y: 288.12122, z: 4.8460836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &156118251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778268008}
-  - component: {fileID: 778268009}
   m_Layer: 0
   m_Name: Roomlist
   m_TagString: Untagged
@@ -1706,31 +1761,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -96.842}
   m_SizeDelta: {x: 0, y: -193.68}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &778268009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778268007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab28048cb2503d74ea43013478eb9187, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  socket: {fileID: 12032057}
-  content: {fileID: 113064978}
-  join: {fileID: 443396867}
-  playerCon: {fileID: 2494702830885218884, guid: e839f14281f3198489f12b422fab6f52,
-    type: 3}
-  roomController: {fileID: 3369499835482918918, guid: cd898d934e2499140a1e75a9449f20d7,
-    type: 3}
-  roomfulMsg: {fileID: 1561797818}
-  roomList: []
-  btn_createroom: {fileID: 1368969335}
-  btn_close: {fileID: 1991545842}
-  Msg: {fileID: 1610530447}
-  CreateRoomIn: {fileID: 24731577}
 --- !u!1 &896447818
 GameObject:
   m_ObjectHideFlags: 0

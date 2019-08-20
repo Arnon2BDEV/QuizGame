@@ -14,7 +14,7 @@ public class GameController : MonoBehaviour
     public ChoicesController choiceCon;
 
     public Slider timerBar;
-    private float maxTime = 5f;
+    private float maxTime = 10f;
     private float timeLeft;
 
     public Transform choicesPanel;

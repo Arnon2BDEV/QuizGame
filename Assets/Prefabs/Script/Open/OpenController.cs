@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using SocketIO;
-using System.Text.RegularExpressions;
 using Playermodel;
 
 public class OpenController : MonoBehaviour
@@ -48,7 +47,7 @@ public class OpenController : MonoBehaviour
         {
             text.text = "Please Assign your name";
             text.enabled = true;
-            StartCoroutine("Textdisable");
+            StartCoroutine(Textdisable());
         }
     }
 
@@ -56,15 +55,5 @@ public class OpenController : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         text.enabled = false;
-    }
-    string JsonToString(string target, string s)
-    {
-        string[] newstring = Regex.Split(target, s);
-        return newstring[1];
-    }
-    string fixJson(string value)
-    {
-        value = "{\"player\":" + value + "}";
-        return value;
     }
 }

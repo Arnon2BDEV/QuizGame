@@ -1,15 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-// A very simple object pooling class
 public class SimpleObjectPool : MonoBehaviour
 {
-    // the prefab that this object pool returns instances of
     public GameObject prefab;
     // collection of currently inactive instances of the prefab
     private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
 
-    // Returns an instance of the prefab
 
     public GameObject GetObject()
     {

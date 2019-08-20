@@ -1155,6 +1155,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377825208}
   m_CullTransparentMesh: 0
+--- !u!1 &1411917362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1411917364}
+  - component: {fileID: 1411917363}
+  m_Layer: 0
+  m_Name: PlayerLobbyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1411917363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411917362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3470ae5f0962f74c9ba214181e9b6d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCon: {fileID: 2494702830885218884, guid: e839f14281f3198489f12b422fab6f52,
+    type: 3}
+  roomController: {fileID: 3369499835482918918, guid: cd898d934e2499140a1e75a9449f20d7,
+    type: 3}
+  btn_startGame: {fileID: 6912995}
+  btn_Close: {fileID: 286849758}
+  roomPin: {fileID: 1136114574}
+  roomName: {fileID: 1016428306}
+  content: {fileID: 1259749001}
+  socket: {fileID: 633125300}
+  play: []
+--- !u!4 &1411917364
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411917362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.041096, y: 288.12122, z: 4.8460836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1471983705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,7 +1254,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1907633287}
-  - component: {fileID: 1907633288}
   m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
@@ -1231,29 +1284,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 178.13}
   m_SizeDelta: {x: 0, y: -356.25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1907633288
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907633286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3470ae5f0962f74c9ba214181e9b6d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerCon: {fileID: 2494702830885218884, guid: e839f14281f3198489f12b422fab6f52,
-    type: 3}
-  roomController: {fileID: 3369499835482918918, guid: cd898d934e2499140a1e75a9449f20d7,
-    type: 3}
-  btn_startGame: {fileID: 6912995}
-  btn_Close: {fileID: 286849758}
-  roomPin: {fileID: 1136114574}
-  roomName: {fileID: 1016428306}
-  content: {fileID: 1259749001}
-  socket: {fileID: 633125300}
-  play: []
 --- !u!1 &1914781324
 GameObject:
   m_ObjectHideFlags: 0
